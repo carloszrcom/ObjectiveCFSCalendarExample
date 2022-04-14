@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Vista DosVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="VistaDos" id="Y6W-OH-hqX" customClass="VistaDosVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc7-oV-J8d" customClass="FSCalendar">
+                                <rect key="frame" x="16" y="44" width="343" height="433"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="3Sz-pl-Qqy"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Mbi-1u-boF"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLn-iE-v3G">
+                                <rect key="frame" x="113" y="539" width="149" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Aceptar"/>
+                                <connections>
+                                    <action selector="accept:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hoj-xn-Cwd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J6-TO-edg">
+                                <rect key="frame" x="105" y="600" width="165" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="rMa-Ti-a4k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5J6-TO-edg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="105" id="3QA-Y6-ibL"/>
+                            <constraint firstItem="nc7-oV-J8d" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4TB-z9-gCX"/>
+                            <constraint firstItem="nc7-oV-J8d" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailingMargin" id="EHe-aV-cot"/>
+                            <constraint firstItem="jLn-iE-v3G" firstAttribute="centerX" secondItem="nc7-oV-J8d" secondAttribute="centerX" id="Fgt-B0-9TS"/>
+                            <constraint firstItem="nc7-oV-J8d" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="H60-B8-4OE"/>
+                            <constraint firstItem="nc7-oV-J8d" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="HIC-Ek-yWC"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nc7-oV-J8d" secondAttribute="bottom" constant="190" id="Io1-rf-xMN"/>
+                            <constraint firstItem="5J6-TO-edg" firstAttribute="top" secondItem="jLn-iE-v3G" secondAttribute="bottom" constant="30" id="NLd-aM-tRf"/>
+                            <constraint firstItem="jLn-iE-v3G" firstAttribute="top" secondItem="nc7-oV-J8d" secondAttribute="bottom" constant="62" id="Uw1-bx-a3m"/>
+                            <constraint firstItem="jLn-iE-v3G" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="XKo-hH-OhT"/>
+                            <constraint firstItem="jLn-iE-v3G" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="113" id="Ypr-xp-OCg"/>
+                            <constraint firstItem="5J6-TO-edg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lAl-Ho-1tl"/>
+                            <constraint firstItem="5J6-TO-edg" firstAttribute="centerX" secondItem="jLn-iE-v3G" secondAttribute="centerX" id="zgm-4t-Rl3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendar" destination="nc7-oV-J8d" id="POD-OQ-gq0"/>
+                        <outlet property="myLabel" destination="5J6-TO-edg" id="ZGE-Qa-sNX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-97.5" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
